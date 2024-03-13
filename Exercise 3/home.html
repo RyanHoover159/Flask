@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Register for Student Organizations</h1>
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+<form action="/" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="organization">Organization:</label>
+    <select id="organization" name="organization" required>
+        <option value="" disabled selected>Select an organization</option>
+        {% for org in organizations %}
+        <option value="{{ org }}">{{ org }}</option>
+        {% endfor %}
+    </select><br><br>
+    <button type="submit">Register</button>
+</form>
+{% endblock %}

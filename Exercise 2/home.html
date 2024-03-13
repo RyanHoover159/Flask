@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Enter a Number:</h1>
+<form action="/" method="post">
+    <input type="text" name="number" required>
+    <button type="submit">Check</button>
+</form>
+{% endblock %}
